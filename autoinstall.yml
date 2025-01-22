@@ -5,7 +5,7 @@ autoinstall:
   identity:
     hostname: testvm
     password: "$6$yxSMXVNrS1YHCX3C$JtbdIBkeN6pGajseMXEMh5Ebj0ls0DM.ZbiPy8xzchuAfosOPCtkPsFGFhEgoOemsSSMa0c6lBszKGgnoXPUc0"
-    username: anon
+    username: tester
   users:
     - name: tester
       gecos: Test User
