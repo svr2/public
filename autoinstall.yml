@@ -1,0 +1,26 @@
+#cloud-config
+
+autoinstall:
+  version: 1
+  identity:
+    hostname: testvm
+    password: "$6$yxSMXVNrS1YHCX3C$JtbdIBkeN6pGajseMXEMh5Ebj0ls0DM.ZbiPy8xzchuAfosOPCtkPsFGFhEgoOemsSSMa0c6lBszKGgnoXPUc0"
+    username: anon
+  users:
+    - name: tester
+      gecos: Test User
+      sudo: ALL=(ALL) NOPASSWD:ALL
+      groups: [sudo]
+      shell: /bin/bash
+      lock_passwd: false
+      passwd: "$6$yxSMXVNrS1YHCX3C$JtbdIBkeN6pGajseMXEMh5Ebj0ls0DM.ZbiPy8xzchuAfosOPCtkPsFGFhEgoOemsSSMa0c6lBszKGgnoXPUc0"
+  passwd:
+    root-password: "$6$yxSMXVNrS1YHCX3C$JtbdIBkeN6pGajseMXEMh5Ebj0ls0DM.ZbiPy8xzchuAfosOPCtkPsFGFhEgoOemsSSMa0c6lBszKGgnoXPUc0"
+    root-password-hash: true
+  storage:
+    layout:
+      name: direct
+  packages:
+    - openssh-server
+  late-commands:
+    - "echo 'Configuration complete.'"
